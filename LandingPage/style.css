@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -76,7 +76,7 @@ li {
   margin: 0 auto;
 }
 .btn {
-  padding: 0.6rem 1.4rem;
+  padding: 1rem 1.4rem;
   border-radius: 1.4rem;
   font-size: 1.2rem;
   outline: none;
@@ -102,6 +102,11 @@ li {
 .nav-item {
   margin: 0 1rem;
 }
+.nav-logo__heading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-left: -1rem;
+}
 .nav-link {
   padding: 0.4rem 1rem;
   font-weight: 500;
@@ -109,11 +114,29 @@ li {
   transition: 0.4s;
   font-size: 1.2rem;
   border-radius: 1rem;
-}
-.nav-link.nav-active {
-  color: var(--white-color);
-  background-color: var(--secondary-color);
   position: relative;
+  padding-bottom: 0.4rem;
+}
+.nav-link::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background: var(--primary-color);
+  transition: 0.3s;
+}
+.nav-link:hover::before,
+.nav-link.nav-active::before {
+  width: 100%;
+}
+.nav .nav-btn {
+  padding: 0.8rem 1.2rem;
+}
+.nav-btn::before {
+  content: "";
+  width: 0 !important;
 }
 
 /* ------HOME------ */
@@ -128,6 +151,9 @@ li {
 .home-title {
   font-weight: 700;
   font-size: 2.6rem;
+}
+.home-title span {
+  color: #000;
 }
 .home-left,
 .home-right {
@@ -147,7 +173,7 @@ li {
 }
 .btn-download,
 .btn-view {
-  width: 11rem;
+  width: 14rem;
 }
 .btn-download a {
   color: var(--white-color);
@@ -188,6 +214,7 @@ li {
   margin-top: 4rem;
   display: flex;
   justify-content: space-between;
+  text-align: center;
 }
 .about-handle {
   display: flex;
@@ -196,7 +223,15 @@ li {
 .about-handle li {
   font-size: 1.6rem;
   width: calc(100% / 4 - 3.5rem);
-  text-align: center;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.about-handle li span {
+  color: #000000be;
+  font-weight: 700;
+  align-self: flex-start;
+  font-size: 3.6rem;
 }
 .about-card {
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
@@ -211,11 +246,16 @@ li {
 }
 .about-img {
   height: 10rem;
+  margin: 2rem 0 1rem 0;
 }
-.about-card img {
-  width: 70%;
+.img-chuc_nang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.img-chuc_nang img {
+  width: 80%;
+}
 /* ----------download  --------- */
 #download {
   padding-top: 10rem;
@@ -267,6 +307,7 @@ li {
   color: var(--white-color);
   font-size: 1.4rem;
   font-weight: 700;
+  cursor: pointer;
 }
 /* -------footer-------- */
 footer {
@@ -284,6 +325,8 @@ footer {
 
 .footer-title {
   margin: 2rem 0 1rem 0;
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 .footer-socials {
   margin-top: 2rem;

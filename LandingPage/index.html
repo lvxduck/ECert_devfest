@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./style.css">
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://kit.fontawesome.com/4fe92035ce.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/png" href="./img/Ecert-logo.png" />
     <title>E-Cert</title>
 </head>
 
@@ -16,14 +17,15 @@
         <div class="nav container flex">
             <div class="nav-logo flex">
                 <img src="./img/Ecert-logo.png" class="mr-2" alt="">
-                <h1 class="fz-16">ECert</h1>
+                <h1 class="nav-logo__heading">ECert</h1>
             </div>
             <ul class="nav-list flex">
                 <li class="nav-item"><a href="#home" class=" nav-link nav-active ">Trang chủ</a></li>
                 <li class="nav-item"><a href="#about" class=" nav-link ">Chức năng</a></li>
                 <li class="nav-item"><a href="#download" class=" nav-link ">Tải ứng dụng</a></li>
                 <li class="nav-item"><a href="#contact" class=" nav-link ">Liên hệ</a></li>
-                <li><a href="" class="btn-download nav-link">Tải xuống <i class="ml-05 fas fa-download"></i></a></li>
+                <li><a href="" class="btn-download nav-btn nav-link">Tải xuống <i class="ml-05 fas fa-download"></i></a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -32,11 +34,12 @@
         <div class="home container flex">
             <div class="home-left">
                 <h1 class="home-title">
-                    ECert
+                    E-Cert <span> - Giải pháp quản lý và chống làm giả văn bằng</span>
                 </h1>
-                <p class="fz-12 mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quo ex ea porro
-                    expedita architecto dolorum vel eveniet facere nisi quis veniam esse, id tempore vitae officia
-                    explicabo voluptas corrupti!</p>
+                <p class="fz-12 mt-1">E-Cert là một ứng dụng sử dụng công nghệ blockchain để quản lý, văn bằng, chứng
+                    chỉ một cách minh bạch, nhanh chóng và
+                    tiện lợi
+                </p>
                 <div class="home-btn">
 
                     <button class="btn btn-download"><a href="">Cài đặt</a> <i
@@ -56,10 +59,10 @@
             </div>
             <div class="about-main">
                 <ul class="about-handle animate-left">
-                    <li>Giải quyết vấn đề làm bằng giả</li>
-                    <li>Tối ưu việc quản lý và lưu trữ văn bằng</li>
-                    <li>Tra cứu và xác thực văn bằng dễ dàng</li>
-                    <li>Tương tác với các bên liên quan văn bằng tối ưu</li>
+                    <li><span>1</span>Giải quyết vấn đề làm bằng giả</li>
+                    <li><span>2</span>Tối ưu việc quản lý và lưu trữ văn bằng</li>
+                    <li><span>3</span>Tra cứu và xác thực văn bằng dễ dàng</li>
+                    <li><span>4</span>Tương tác với các bên liên quan văn bằng tối ưu</li>
                 </ul>
             </div>
             <div class="about-desc">
@@ -98,10 +101,12 @@
 
             </div>
             <div class="about-desc">
-                <p class="about-title fz-14  animate-left">ECert hoạt động như thế nào</p>
+                <p class="about-title fz-14  animate-left">ECert hoạt động như thế nào?</p>
             </div>
             <div class="about-main">
-                <img src="./img/chuc_nang.png" class="animate-bottom" alt="">
+                <div class="img-chuc_nang">
+                    <img src="./img/chuc_nang.png" class="animate-bottom" alt="">
+                </div>
             </div>
         </div>
 
@@ -114,14 +119,9 @@
             </div>
             <div class="download-right">
                 <h1 class="animate-top">Tải xuống ứng dụng</h1>
-                <p class="fz-14 animate-right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rem
-                    ipsum quis ad
-                    fugit aut
-                    earum
-                    ea commodi, pariatur hic adipisci repellendus expedita deleniti officia nemo explicabo corporis
-                    eaque
-                    eligendi.</p>
-                <button class="btn btn-download animate-bottom-900"><a href="">Cài đặt</a>
+                <p class="fz-14 animate-right">Ứng dụng Desktop dành cho cơ sở cấp bằng quản lý và tạo văn bằng chứng
+                    chỉ</p>
+                <button class="btn btn-download animate-bottom-900"><a href="">Tải xuống ngay</a>
                     <i class="ml-05 fas fa-download"></i></button>
 
             </div>
@@ -129,10 +129,10 @@
     </section>
     <section id="contact" class="container">
         <div class="contact-content animate-top">
-            <h1 class=" fz-18">Đăng kí để cập nhập những thông tin mới nhất</h1>
-            <p class="fz-12 mt-1 mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <h1 class=" fz-18">Đăng kí để nhận thông báo!</h1>
+            <p class="fz-12 mt-1 mb-2">Chúng tôi sẽ thông báo cho bạn khi có những thông tin mới nhất về sản phẩm.</p>
             <div class="contact-input">
-                <input type="text">
+                <input type="text" placeholder="Nhập email của bạn">
                 <button class="contact-btn">Gửi</button>
             </div>
         </div>
@@ -143,9 +143,10 @@
     <footer>
         <div class="container footer ">
             <div class="footer-col animate-bottom">
-                <h5 class="fz-16 footer-title">ECert</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum eum et minus maiores
-                        similique.
+                <h5 class="footer-title">ECert</h1>
+                    <p>E-Cert là một ứng dụng sử dụng công nghệ blockchain để quản lý, văn bằng, chứng chỉ một cách minh
+                        bạch, nhanh chóng và
+                        tiện lợi
                     </p>
                     <ul class="footer-socials flex">
                         <li class="footer-social__item">
@@ -159,7 +160,7 @@
             </div>
 
             <div class="footer-col animate-bottom">
-                <h5 class="fz-16 footer-title">Thành viên</h1>
+                <h5 class="footer-title">Thành viên</h1>
 
                     <p>Lê Vĩnh Nhân Đức</p>
                     <p>Huỳnh Thị Ngọc Quyên</p>
@@ -169,7 +170,7 @@
 
             </div>
             <div class="footer-col animate-bottom">
-                <h5 class="fz-16 footer-title"> Nền tảng</h5>
+                <h5 class="footer-title"> Nền tảng</h5>
                 <p>Web/Desktop</p>
                 <p>Mobile (Sắp ra mắt)</p>
             </div>
