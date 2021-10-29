@@ -18,7 +18,7 @@ class SignUp extends StatelessWidget {
           key: _formKey,
           child: Column(
             children: [
-              const SizedBox(height: 36),
+              const SizedBox(height: 28),
               Text(
                 "Đăng kí",
                 style: Get.theme.textTheme.headline3,
@@ -41,8 +41,18 @@ class SignUp extends StatelessWidget {
                 controller: _controller.schoolNameController,
                 decoration: const InputDecoration(
                   hintText: "Nhập tên trường",
+                  labelText: 'Nhập tên trường',
                 ),
                 validator: _controller.schoolNameValidator,
+              ),
+              const SizedBox(height: 16),
+              TextFormField(
+                controller: _controller.emailController,
+                decoration: const InputDecoration(
+                  hintText: "Nhập Email",
+                  labelText: 'Nhập Email',
+                ),
+                validator: _controller.emailNameValidator,
               ),
               const SizedBox(height: 18),
               SizedBox(
@@ -77,7 +87,7 @@ class SignUp extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 64),
+              const SizedBox(height: 42),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

@@ -1,5 +1,6 @@
 import 'package:ecert/core/widget/custom_dialog.dart';
 import 'package:ecert/features/home/view/home.dart';
+import 'package:ecert/features/login/view/login.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
@@ -11,7 +12,13 @@ class SignUpWarningController extends GetxController {
     if (clipboardData?.text != privateKey) {
       CustomDialog.showWarning("Bạn chưa lưu khóa bí mật!");
     } else {
-      Get.to(Home());
+      CustomDialog.showAlertDialog(
+        "Thông báo",
+        "Tài khoản của bạn đã được tạo và đang\nđược xác minh. Chúng tôi sẽ phản hồi   \ncho bạn trong vòng 3 ngày tới.",
+        onClose: () {
+          Get.offAll(() => Login());
+        },
+      );
     }
   }
 }

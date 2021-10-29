@@ -1,6 +1,6 @@
 import 'package:ecert/core/svg_icon.dart';
 import 'package:ecert/features/home/controller/home_controller.dart';
-import 'package:ecert/features/home/model/app_bar.dart';
+import 'package:ecert/features/home/widget/app_bar.dart';
 import 'package:ecert/theme/theme_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

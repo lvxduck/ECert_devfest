@@ -94,7 +94,7 @@ class CustomDialog {
     );
   }
 
-  static void showAlertDialog(String title, String content) {
+  static void showAlertDialog(String title, String content, {VoidCallback? onClose}) {
     Get.dialog(
       AlertDialog(
         title: Text(title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
@@ -105,13 +105,64 @@ class CustomDialog {
         content: Text(content),
         actions: <Widget>[
           Align(
-              child: ElevatedButton(
-            onPressed: Get.back,
-            child: const Text(
-              "Đóng",
-              style: TextStyle(fontSize: 16, color: Colors.white),
+            child: ElevatedButton(
+              onPressed: onClose ?? Get.back,
+              child: const Text(
+                "Đóng",
+                style: TextStyle(fontSize: 16, color: Colors.white),
+              ),
             ),
-          )),
+          ),
+        ],
+      ),
+    );
+  }
+
+  static void showConfirmDialog({required String title, required String content, required void Function() onConfirm}) {
+    Get.dialog(
+      AlertDialog(
+        title: Text(title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+        contentPadding: const EdgeInsets.only(left: 18, right: 18, top: 12),
+        titlePadding: const EdgeInsets.only(left: 18, right: 18, top: 18),
+        buttonPadding: const EdgeInsets.only(left: 18, right: 18, bottom: 10),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+        content: Text(content, style: const TextStyle(fontSize: 16)),
+        actions: <Widget>[
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: Get.back,
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.grey[300],
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                  ),
+                  child: Text(
+                    "Hủy",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: CustomTheme.lightColorScheme.primary,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 18),
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: onConfirm,
+                  style: TextButton.styleFrom(
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                  ),
+                  child: const Text(
+                    "Đồng ý",
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );

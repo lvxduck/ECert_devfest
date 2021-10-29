@@ -75,7 +75,10 @@ class _AddCertificateState extends State<AddCertificate> {
                     ].map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
-                        child: Text(value, overflow: TextOverflow.ellipsis),
+                        child: Text(
+                          value,
+                          style: TextStyle(color: CustomTheme.lightColorScheme.primary),
+                        ),
                       );
                     }).toList(),
                   ),
@@ -108,7 +111,16 @@ class _AddCertificateState extends State<AddCertificate> {
               child: const Text("Thêm mới"),
             ),
             const SizedBox(width: 16),
-            ElevatedButton(onPressed: () {}, child: const Text("Hủy")),
+            ElevatedButton(
+              onPressed: Get.back,
+              child: Text(
+                "Hủy",
+                style: TextStyle(color: CustomTheme.lightColorScheme.primary),
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.grey[300],
+              ),
+            ),
             const SizedBox(width: 16),
           ],
         ),
