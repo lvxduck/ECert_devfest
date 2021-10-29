@@ -59,7 +59,7 @@ class ViewCertificate extends StatelessWidget {
                 (e) {
                   return CustomTextField(
                     label: e,
-                    value: certificate.extraData[e],
+                    value: "${certificate.extraData[e]}",
                   );
                 },
               )),

@@ -16,7 +16,7 @@ class DeleteCertificate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(18.0),
+      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 18),
       child: Column(
         children: [
           SizedBox(
@@ -26,12 +26,12 @@ class DeleteCertificate extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           const Text(
-            "Bạn chắc chứ?",
+            "Xóa văn bằng?",
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           const Expanded(
             child: Align(
-              child: Text("Bạn có thật sự muốn xóa giấy chứng nhận này không? Quá trình này không thể hoàn tác."),
+              child: Text("Lưu ý: Quá trình này không thể hoàn tác."),
             ),
           ),
           const SizedBox(height: 16),
