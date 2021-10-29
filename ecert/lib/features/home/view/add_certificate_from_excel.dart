@@ -92,7 +92,7 @@ class _AddCertificateFromExcelState extends State<AddCertificateFromExcel> {
                     style: TextStyle(color: Colors.black),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.grey[300],
+                    primary: Colors.grey[200],
                   ),
                 ),
                 Row(

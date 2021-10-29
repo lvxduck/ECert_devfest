@@ -1,3 +1,4 @@
+import 'package:ecert/block_chain/ecert_modal.dart';
 import 'package:ecert/core/widget/custom_dialog.dart';
 import 'package:ecert/features/home/view/home.dart';
 import 'package:ecert/features/sign_up/view/sign_up.dart';
@@ -14,12 +15,13 @@ class LoginController extends GetxController {
   }
 
   void submit(GlobalKey<FormState> formKey) async {
-    if (formKey.currentState!.validate()) {
-      CustomDialog.showLoading();
-      await Future.delayed(1.seconds);
-      Get.back();
-      Get.to(Home());
-    }
+    EcertSmartContract();
+    // if (formKey.currentState!.validate()) {
+    //   CustomDialog.showLoading();
+    //   await Future.delayed(1.seconds);
+    //   Get.back();
+    //   Get.to(Home());
+    // }
   }
 
   void moveToSignUp() {

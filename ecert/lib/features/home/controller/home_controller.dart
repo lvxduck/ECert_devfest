@@ -18,12 +18,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeController extends GetxController {
   List<String> cids = [
-    "QmeeFPjVRi5d3jke32GjrKPx8Ht4DkC2myGH7tMgF72G98",
-    "QmSWQ6LvZ265K8FEZCt5GCHLg4F8sojcsuAG1xgFwRipoE",
-    "QmTgw5jynUEiAuUHLTg4viu4qZrnoCPsq5utBDrTcLkmJm",
-    "Qmee4G57UBgr5m92QFZDi3NDrJvbFZm7npExGcdXfK5H3B",
-    "QmUHH12GJnAdrbvhnjHa7NskYKhnB7us33aGzzJQpWLKLc",
-    "QmXqAr3BNxWSSH4DqZhHZ1wS9WvZ8Tm1B4MoCQAmbyzQXp",
+    "QmXxnGaac9GkVBD1v2Ahvr2gGQGxfcS4GheiHVeuFphoQF",
+    "QmWzHpM4ewcrgmkzx5ebXhLjs5CpB3Pkywp4mf2ExGLjGg",
+    "QmSHNVuo9Q6d3vH1M7bRDnPcecTodMDjze35H3eoWJRmrN",
+    "QmNhfd5BW5FC9hAfSGF6XqqZVBvrbAzvuEqba4HGxajhDq",
   ];
 
   late List<Certificate?> dataCert;
@@ -53,9 +51,13 @@ class HomeController extends GetxController {
   }
 
   void initCer(String cid, int index) async {
-    final rawCert = await IpfsUtils().getData(cid);
-    dataCert[index] = Certificate.fromJson(json: jsonDecode(rawCert), cid: cid);
-    orderInfoDataSource.value = CertificateDataSource(employeeData: dataCert);
+    try {
+      final rawCert = await IpfsUtils().getData(cid);
+      dataCert[index] = Certificate.fromJson(json: jsonDecode(rawCert), cid: cid);
+      orderInfoDataSource.value = CertificateDataSource(employeeData: dataCert);
+    } catch (e) {
+      CustomDialog.showAlertDialog("Lỗi", e.toString());
+    }
   }
 
   void onSearchSubmitted(String value) {

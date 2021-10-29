@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const TextStyle headerStyle = TextStyle(color: Colors.white);
-    const int rowsPerPage = 3;
+    const int rowsPerPage = 15;
 
     return Scaffold(
       appBar: appBar(),
@@ -46,7 +46,7 @@ class Home extends StatelessWidget {
                   child: Obx(() {
                     return SfDataPager(
                       delegate: _controller.orderInfoDataSource.value,
-                      pageCount: _controller.dataCert.length / rowsPerPage,
+                      pageCount: _controller.dataCert.length / rowsPerPage + 1,
                       direction: Axis.horizontal,
                       itemHeight: 38,
                       itemWidth: 38,
