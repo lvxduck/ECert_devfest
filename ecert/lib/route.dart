@@ -1,3 +1,0 @@
-class Route {
-  Route._();
-}
