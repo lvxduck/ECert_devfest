@@ -4,10 +4,14 @@ on:
   pull_request:
     branches:
       - master
+      - dev
 
 jobs:
   build:
     runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: ./desktop_dapp
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
