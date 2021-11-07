@@ -4,10 +4,14 @@ on:
   pull_request:
     branches:
       - master
+      - dev
 
 jobs:
   build:
     runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: ./desktop_dapp
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -21,6 +25,7 @@ jobs:
         with:
           flutter-version: "2.5.2"
           channel: "stable"
+      - name: Move to flutter folder
       - name: Install pub Dependencies
         run: flutter pub get
       - name: Analyze project source
