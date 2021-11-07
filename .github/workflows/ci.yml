@@ -25,7 +25,6 @@ jobs:
         with:
           flutter-version: "2.5.2"
           channel: "stable"
-      - name: Move to flutter folder
       - name: Install pub Dependencies
         run: flutter pub get
       - name: Analyze project source
